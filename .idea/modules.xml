@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ubddpd/ubddpd.iml" filepath="$PROJECT_DIR$/ubddpd/ubddpd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ubddpd-project.iml" filepath="$PROJECT_DIR$/ubddpd-project.iml" />
+    </modules>
+  </component>
+</project>

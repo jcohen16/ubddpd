@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="MyApp" packages="">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+        <RollingFile name="SystemAppender" fileName="./../rabidd/res/log/system.log"
+                     filePattern="./../rabidd/res/log/archive/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.zip">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="ResultsAppender" fileName="./../rabidd/res/log/results.log"
+                     filePattern="./../rabidd/res/log/archive/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.zip">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="rabiddAppender" fileName="./../rabidd/res/log/testData.log"
+                     filePattern="./../rabidd/res/log/archive/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.zip">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+        <Logger name="systemLogger" level="info">
+            <AppenderRef ref="SystemAppender"/>
+        </Logger>
+        <Logger name="resultsLogger" level="info">
+            <AppenderRef ref="ResultsAppender"/>
+        </Logger>
+        <Logger name="rabiddLogger" level="info">
+            <AppenderRef ref="rabiddAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>
