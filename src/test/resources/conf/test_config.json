@@ -1,0 +1,21 @@
+{
+	"webserver_home_url": "http://127.0.01:5000",
+	"browser": "Chrome",
+	"wait": 30,
+	"closeBrowserAfterRun": true,
+	"firefoxConfig": {
+		"reuse": true
+	},
+	"chromeConfig": {
+		"webdriver.chrome.driver": "src/test/resources/drivers/chromedriver/win32_v2.38.552522/chromedriver.exe",
+		"binaryPath": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+	},
+	"ieConfig": {
+		"webdriver.ie.driver": "src/test/resources/drivers/IEDriverServer.exe"
+	},
+	"jiraConfig": {
+		"host": "",
+		"username": "",
+		"password": ""
+	}
+}
