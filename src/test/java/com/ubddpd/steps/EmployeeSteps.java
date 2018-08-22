@@ -37,7 +37,6 @@ public class EmployeeSteps {
 
 	@Then("^the list of Employees should be as expected$")
 	public void validateListOfEmployees() throws Exception {
-		employeeService.setHost("http://127.0.0.1:5000");
 		List<Employee> expectedEmployees = employeeService.getAllEmployees();
 		List<Employee> actualEmployees = employeesPage.getEmployeesList();
 		Assert.assertEquals("Number of employees different from expected", expectedEmployees.size(), actualEmployees.size());
@@ -48,13 +47,9 @@ public class EmployeeSteps {
 		}
 	}
 
-	@Then("^the title of Employee with '(.*) '(.*)' is '(.*)'$")
+	@Then("^the title of Employee with '(.*)' '(.*)' is '(.*)'$")
 	public void validateEmployeeTitle(String key1, String value1, String title) throws Exception {
-		employeeService.setHost("http://127.0.0.1:5000");
-
-		String name = value1;
-
-		List<Employee> expectedEmployees = employeeService.getEmployeesByName(name);
+		List<Employee> expectedEmployees = employeeService.getEmployeesByName(key1, value1);
 		Assert.assertEquals("Number of employees different from expected", 1, expectedEmployees.size());
 		Assert.assertEquals("Title returned by service is not as expected", title, expectedEmployees.get(0).title);
 		System.out.println();

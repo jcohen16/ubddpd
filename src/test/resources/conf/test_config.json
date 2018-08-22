@@ -1,5 +1,6 @@
 {
 	"webserver_home_url": "http://127.0.01:5000",
+	"webservice_host_url": "http://127.0.01:5000",
 	"browser": "Chrome",
 	"wait": 30,
 	"closeBrowserAfterRun": true,
